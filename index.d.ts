@@ -7,10 +7,12 @@ import {
   SizeProp,
   PullProp,
   RotateProp,
-  FaSymbol
+  FaSymbol,
+  IconDefinition as FontAwesomeSVGIconDefinition
 } from '@fortawesome/fontawesome-svg-core'
+import { IconDefinition as FreeSolidSVGIconDefinition } from '@fortawesome/free-solid-svg-icons';
 
-export function FontAwesomeIcon(props: FontAwesomeIconProps): JSX.Element
+export function FontAwesomeIcon(props: FontAwesomeIconProps): JSX.Element 
 
 /**
  * @deprecated use FontAwesomeIconProps
@@ -22,7 +24,7 @@ type BackwardCompatibleOmit<T, K extends keyof any> = Pick<T, Exclude<keyof T, K
 
 export interface FontAwesomeIconProps extends BackwardCompatibleOmit<SVGAttributes<SVGSVGElement>, 'children' | 'mask' | 'transform'> {
   forwardedRef?: ((e: any) => void) | React.MutableRefObject<any> | null
-  icon: IconProp
+  icon: FreeSolidSVGIconDefinition | FontAwesomeSVGIconDefinition
   mask?: IconProp
   className?: string
   color?: string
